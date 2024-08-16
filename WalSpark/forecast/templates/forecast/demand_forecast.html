@@ -1,0 +1,13 @@
+{% extends 'forecast/base.html' %}
+
+{% block content %}
+<h1>Demand Forecast</h1>
+<div class="input-container">
+    <form method="POST">
+        {% csrf_token %}
+        <label for="category">Enter category:</label>
+        <input type="text" id="category" name="category">
+        <button type="submit">Submit</button>
+    </form>
+</div>
+{% endblock %}
