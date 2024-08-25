@@ -2,7 +2,8 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('demand/', views.demand_forecast, name='demand_forecast'),
+    path('',views.home, name='home'),
+    path('demand/', views.demand, name='demand'),
     path('inventory/', views.inventory, name='inventory'),
     path('recommendations/', views.recommendations, name='recommendations'),
 ]

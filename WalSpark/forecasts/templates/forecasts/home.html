@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}WalSpark{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'forecasts/styles.css' %}">
+</head>
+<body>
+    <div class="header">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/54/Walmart_logo.svg" alt="WalSpark Logo">
+        <h1>WalSpark</h1>
+    </div>
+    <div class="nav">
+        <a href="{% url 'home' %}" {% if request.path == '/' %}class="active"{% endif %}>Home</a>
+        <a href="{% url 'inventory' %}" {% if request.path == '/inventory/' %}class="active"{% endif %}>Inventory</a>
+        <a href="{% url 'demand' %}" {% if request.path == '/demand/' %}class="active"{% endif %}>Demand</a>
+        <a href="{% url 'recommendations' %}" {% if request.path == '/recommendations/' %}class="active"{% endif %}>Recommendations</a>
+    </div>
+    <div class="container">
+        {% block content %}
+        <h2>Welcome to WalSpark</h2>
+        <p>This is the home page where you can access different forecasting tools for your business.</p>
+        {% endblock %}
+    </div>
+</body>
+</html>

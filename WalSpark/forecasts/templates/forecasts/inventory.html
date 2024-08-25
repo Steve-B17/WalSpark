@@ -1,0 +1,13 @@
+{% extends 'forecasts/home.html' %}
+
+{% block title %}Inventory Management{% endblock %}
+
+{% block content %}
+<h2 style="position: absolute;">Inventory Management</h2>
+<p style="position: relative;padding: 0 0 10vh 0">This is the inventory management page where you can manage your products and stock levels.</p>
+<form> 
+    <label>Enter Product ID</label>
+    <input type="text" name="product_id" placeholder="Product ID">
+    <button type="submit">Submit</button>
+</form>
+{% endblock %}
